@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/sidebar/sidebar",
+    "pages/stick-top/stick-top",
+    "pages/movable/movable",
+    "pages/nearby/nearby",
+    "pages/add/index",
+    "pages/welcome/index",
+    "pages/AutoTest/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle":"custom"
+  },
+  "style":"v2",
+  "sitemapLocation": "sitemap.json"
+}
