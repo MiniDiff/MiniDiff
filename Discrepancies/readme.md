@@ -1,4 +1,4 @@
-You can open a project by adding the corresponding project file to the development tool.
+You can open a project by adding the corresponding project file to DevTools.
 If it can not run, you can choose one of two ways to solve it:
 
 1.Import to development tools via Code snippet links.
