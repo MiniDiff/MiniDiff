@@ -1,0 +1,7 @@
+<navigation-bar title="P6 - Inconsistent Messaging Channel" back="{{false}}" />
+<view class="Box">
+  <text>{{md.var_list.toString()}}</text>
+</view>
+<wxs module="md">
+    module.exports.var_list = [0,1]
+</wxs>

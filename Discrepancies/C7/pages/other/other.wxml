@@ -1,0 +1,11 @@
+<navigation-bar title="C7 - Inconsistent Data Backup Mechanism" back="{{true}}" />
+<view class="Box">
+  <button bind:tap="tap_handler">{{md.fun()}}</button>
+</view>
+<wxs module="md">
+    var count = 0
+    module.exports.fun = function(){
+        console.log("[wxs md fun] count:" + ++count);
+        return count
+    }
+</wxs>

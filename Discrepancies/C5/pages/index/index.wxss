@@ -1,0 +1,13 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.Box{
+    text-align: center;
+    padding: 100px;
+}
+.change {
+  color: white;
+  background: #353535;
+}

@@ -1,0 +1,4 @@
+<navigation-bar title="C20 - Inconsistent (De)Serialization" back="{{false}}" />
+<view class="Box">
+    <text>{{js_fun()}}</text>
+</view>

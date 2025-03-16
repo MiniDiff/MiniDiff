@@ -1,0 +1,9 @@
+<navigation-bar title="C15 - Inconsistent Scope Priority" back="{{false}}" />
+<view class="Box">
+    <view wx:for="{{var_list()}}" wx:for-item="md">
+        <text>{{md.key}}</text>
+    </view>
+</view>
+<wxs module="md">
+    module.exports = {key: "wxs_list_value"}
+</wxs>
