@@ -1,0 +1,14 @@
+<navigation-bar title="C18 - Inconsistent Scope Priority" back="{{false}}" />
+<view class="Box">
+    <view wx:for="{{md.fun()}}" wx:for-item="md">
+        <text>{{md.key}}</text>
+    </view>
+</view>
+<wxs module="md">
+    module.exports = {
+        key: "wxs_var_value",
+        fun: function(){
+            return [{key: "wxs_fun_value"}]
+        }
+    }
+</wxs>

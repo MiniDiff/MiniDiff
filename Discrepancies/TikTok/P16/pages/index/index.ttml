@@ -1,0 +1,3 @@
+<view>
+  <button bindtap="Toshow" >go to show</button>
+</view>

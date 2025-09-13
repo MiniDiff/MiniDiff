@@ -1,0 +1,11 @@
+<navigation-bar title="P4 - Inconsistent Data Update" back="{{false}}" />
+<view class="Box">
+  <text>{{md.fun(var_num)}}</text>
+</view>
+<wxs module="md">
+    var count = 0
+    module.exports.fun = function(data){
+        console.log("[wxs md fun] count:" + ++count);
+        return count
+    }
+</wxs>

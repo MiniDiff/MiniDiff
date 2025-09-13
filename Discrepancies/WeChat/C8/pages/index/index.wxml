@@ -1,0 +1,4 @@
+<navigation-bar title="C8 - Inconsistent Data Backup Mechanism" back="{{false}}" />
+<view class="Box">
+    <navigator style='display:block;line-height:40px;color:blue;' url='../other/other'>go to wrong page</navigator>
+</view> 
