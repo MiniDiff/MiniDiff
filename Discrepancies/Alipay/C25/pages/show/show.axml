@@ -1,0 +1,4 @@
+<view style="text-align: center;">
+  {{md.ReturnCount()}}
+</view>
+<import-sjs from="./show.sjs" name="md" />

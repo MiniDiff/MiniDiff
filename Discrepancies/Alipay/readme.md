@@ -1,7 +1,10 @@
-This project is the code show in paper 5-E.  
-Whether the sjs data will be initialized when the reloading.  
+This project is the code of discrepancies in cross-layer communications of Alipay in Table 3.  
+ 
 usage:  
 Running on Android or iOS Phones.  
+discrepancies will be displayed in the interface, AXML or log
+C23,C27,P10 and P11 need to click the button to change the data
+C25,C26:
 Tap the button goto the show_page.  
 Tap the button on show_page to add the count.  
 Then tap the upper right corner to return to the initial page.  
