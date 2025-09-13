@@ -1,9 +1,0 @@
-<navigation-bar title="C3 - Inconsistent (De)Serialization" back="{{false}}" />
-<view class="Box">
-    <text style="background:{{md.ReturnCloor(ColorData)}}">text</text>
-</view>
-<wxs module="md">
-  module.exports = {
-    ReturnCloor :  function(array){return array[0]},
-  }
-</wxs>

@@ -1,5 +1,0 @@
-<navigation-bar title="P5 - Inconsistent Messaging Channel" back="{{false}}" />
-<view class="Box">
-  <text>{{var_list.toString()}}</text>
-</view>
-

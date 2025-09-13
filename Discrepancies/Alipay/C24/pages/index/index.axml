@@ -1,5 +1,0 @@
-
-<view>
-  fun:{{md.fun}}
-</view>
-<import-sjs from="./index.sjs" name="md" />

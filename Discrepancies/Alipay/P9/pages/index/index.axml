@@ -1,3 +1,0 @@
-
-<input placeholder="{{List}}" />
-<import-sjs from="./index.sjs" name="md" />

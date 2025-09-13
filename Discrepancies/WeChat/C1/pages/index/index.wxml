@@ -1,4 +1,0 @@
-<navigation-bar title="C1 - Inconsistent (De)Serialization" back="{{false}}" />
-<view class="Box">
-  <text>{{ColorData}}</text>
-</view>

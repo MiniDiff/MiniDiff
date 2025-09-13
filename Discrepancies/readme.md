@@ -1,1 +1,0 @@
-This file show the discrepancies of WeChat, Alipay and TikTok Mini-Program.

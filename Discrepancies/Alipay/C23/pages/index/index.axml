@@ -1,5 +1,0 @@
-
-<view>
-  fun:{{fun}}
-  <button onTap="onTap" >change fun</button>
-</view>
