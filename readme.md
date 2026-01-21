@@ -1,4 +1,4 @@
-This repo is for "Detecting Logic Discrepancies in Cross-Layer Communications within the WeChat Mini-Program Framework"
+This repo is for "Detecting Logic Discrepancies in Cross-Layer Communications within the Mini-Program Framework"
 
 The folder **Discrepancies** contains the examples of Discrepancies codes:  
     -**WeChat**:WeChat Mini-Program Discrepancies    
@@ -10,10 +10,6 @@ The folder **Discrepancies** contains the examples of Discrepancies codes:
     -**TikTok**:TikTok Mini-Program Discrepancies  
         --**P12-P18**  : All sample codes  
         --**readme.md** : Introduction 
-
-The folder **templates** contains the document of templates and domain knowledge:  
-    -**templates.pdf**:WeChat, TikTok and AlipayMini-Program  
-    --**readme.md** : Introduction  
 
 The folder **autotest** contains the  MiniDiff code：  
     -**code** : main code  
