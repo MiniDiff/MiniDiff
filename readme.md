@@ -9,13 +9,13 @@ The directory structure of the **Discrepancies Example** is as follows:
 ```
 Discrepancies/  
 ├── WeChat/                # WeChat Mini-Program Discrepancies    
-├── ── C1-C20,P1-P8        # All sample codes  
+├── ── C1-C20,P1-P8/       # All sample codes  
 ├── ── readme.md           # Introduction and Code snippet links  
 ├── Alipay/                # Alipay Mini-Program Discrepancies  
-├── ── C21-C27,P9-P11      # sample code  
+├── ── C21-C27,P9-P11/     # sample code  
 ├── ── readme.md           # Introduction  
 ├── TikTok/                # TikTok Mini-Program Discrepancies  
-├── ── P12-P18             # All sample codes  
+├── ── P12-P18/            # All sample codes  
 └── ── readme.md           # Introduction 
 ```
 
@@ -26,7 +26,7 @@ The directory structure of the **MiniDiff** project is as follows:
 ```
 autotest/
 ├── code/                  # main code  
-├── ── readme.md/          # Introduction  
+├── ── readme.md           # Introduction  
 ├── ── auto.spec.js        # main code, generate code and run Wechat test case.  
 ├── ── auto.spec-gen.js    # generator code, part of main code.  
 ├── ── AlipayT/            # template for Alipay.  
