@@ -26,7 +26,7 @@ The directory structure of the **supplementary materia** is as follows:
 ```
 supplementary materia/  
 ├── known_issues.pdf       # table of known issues in paper §6.2    
-└── zero_day_issues.pdf    # table of zero_day issues of WeChat Alipay and TikTok in paper §6.2  
+└── zero_day_issues.pdf    # table of zero_day issues of WeChat Alipay and TikTok in paper §6.3  
 ```
 
 autotest
