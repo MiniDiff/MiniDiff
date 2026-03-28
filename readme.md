@@ -19,6 +19,16 @@ Discrepancies/
 └── ── readme.md           # Introduction 
 ```
 
+supplementary material
+----
+The folder **supplementary material** contains the detail table of zero-day issues and known issues  
+The directory structure of the **supplementary materia** is as follows:
+```
+supplementary materia/  
+├── known_issues.pdf       # table of known issues in paper §6.2    
+└── zero_day_issues.pdf    # table of zero_day issues of WeChat Alipay and TikTok in paper §6.2  
+```
+
 autotest
 ----
 The folder **autotest** contains the  MiniDiff code  
