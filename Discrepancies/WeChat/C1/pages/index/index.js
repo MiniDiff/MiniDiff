@@ -1,11 +1,8 @@
 Page({
-    data: {
-        var_num: 0,
-    },
-    tap_handler: function(){
-        this.setData({
-            var_num: 0
-        })
-    }
+  data: {
+    JSData:'Hellow',
+  },
+  TipCount:function(data){
+    this.setData({JSData :"Change",})
+  },
 })
-  

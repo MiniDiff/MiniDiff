@@ -1,9 +1,7 @@
 <navigation-bar title="C3 - Inconsistent Shadow-data Maintenance" back="{{false}}" />
 <view class="Box">
-    <button class="change" bindtap="TipCount">change</button>
-    <view wx:if="{{md.fun() == 5}}">if:true </view>
-    <view wx:else>if:flase</view>
-</view> 
+  <button bind:tap="tap_handler">{{md.fun(var_num)}}</button>
+</view>
 <wxs module="md">
     var count = 0
     module.exports.fun = function(data){
