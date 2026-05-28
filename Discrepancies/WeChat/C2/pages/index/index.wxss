@@ -3,7 +3,7 @@ page {
   flex-direction: column;
   height: 100vh;
 }
-.Box{
+.Box{ 
     text-align: center;
     padding: 100px;
 }
