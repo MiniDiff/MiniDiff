@@ -1,9 +1,14 @@
 import os
 import shutil
+import argparse
 import pyautogui
 import time
 import tkinter as tk
 import difflib
+from pathlib import Path
+
+import DataTypes as DataType
+import MakeFile
 
 class FileManager:
     def __init__(self):
@@ -69,10 +74,32 @@ class FileManager:
         self.click_position(300, 400)
 
 manager = FileManager()
-platform = "DevTools" #"AndroidVM" #"DevTools" #"Windows" #"IOS" #"Mac"
-conf = "normal" #"native" # "Skyline" #"geW" #"geS" #"exW" 
-projectPath = 'F:/AliMiniProjects/autotest/pages/index'
-ResultPath = 'D:/User/wind/Desktop/research/mini/tool/AutoScrip/AlipayAutoTestResult'
+platform = "DevTools"
+conf = "normal"
+supperapp = "0" # 0 for Alipay , 1 for TikTok
+projectPath = None
+codePath = None
+ResultPath = '../AutoTestResult/'
+
+
+def ConfigureFromArgs(argv=None):
+    global platform, conf, supperapp, projectPath, ResultPath, codePath
+
+    parser = argparse.ArgumentParser(description="Generate, execute, and analyze mini-program auto tests.")
+    parser.add_argument("--platform", default=platform, help="Target platform, e.g. DevTools, AndroidVM, Windows, IOS, Mac.")
+    parser.add_argument("--conf", default=conf, help="Runtime config, e.g. normal, native.")
+    parser.add_argument("--supperapp", default=supperapp, help="Target supperapp, e.g. 0 for Alipay , 1 for TikTok")
+    parser.add_argument("--project-path", required=True, help="Mini-program page directory used by Executor.")
+    parser.add_argument("--result-path", default=ResultPath, help="Directory for generated cases and collected results.")
+    args = parser.parse_args(argv)
+
+    platform = args.platform
+    conf = args.conf
+    supperapp = args.supperapp
+    projectPath = args.project_path
+    codePath = os.path.join(projectPath, 'pages/index')
+    ResultPath = args.result_path
+    return args
 
 def SaveFile(filename, content):
     try:
@@ -83,10 +110,49 @@ def SaveFile(filename, content):
         print(f"写入文件失败: {e}")
 
 def Generator(RootPath):
-    #原本的改一下模版就能用
-    #循环遍历每个选项
-    #生成文件夹
-    #生成代码
+    # Generate every test case directory and write index.axml/index.js/index.sjs.
+    data_types = DataType.DataTypes
+    operators = DataType.operators
+    root_path = Path(RootPath)
+    root_path.mkdir(parents=True, exist_ok=True)
+
+    for modul1 in range(2):
+        for modul2 in range(3):
+            for modul3 in range(3):
+                for modul4 in range(3):
+                    for dt_num in range(len(data_types) - 1, -1, -1):
+                        for api_num in range(0, -1, -1):
+                            for oper_num in range(len(operators) - 1, -1, -1):
+                                case_name = (
+                                    "A"
+                                    + str(modul1)
+                                    + str(modul2)
+                                    + str(modul3)
+                                    + str(modul4)
+                                    + data_types[dt_num][0]
+                                    + str(api_num)
+                                    + str(oper_num)
+                                )
+                                case_path = root_path / case_name
+                                case_path.mkdir(parents=True, exist_ok=True)
+
+                                type_num = MakeFile.MakeWXMLFile(
+                                    modul1,
+                                    modul2,
+                                    modul3,
+                                    modul4,
+                                    data_types[dt_num],
+                                    data_types[dt_num][2][api_num],
+                                    operators[oper_num],
+                                    case_path,
+                                    supperapp
+                                )
+                                MakeFile.MakeJSFile(data_types[dt_num], type_num, case_path, supperapp)
+                                MakeFile.MakeWXSFile(data_types[dt_num], type_num, case_path, supperapp)
+
+                                if modul3 == 0:
+                                    break
+
     print("Generator OK")
     return
 
@@ -200,17 +266,25 @@ def Executor(RootPath):
     
     all_files = []
     print("Executor Begin")
+    suffix = ".axml" if supperapp else ".ttml"
+    #将app.json复制到目标项目中
+    if supperapp == 0 :
+        if conf == "normal":
+            manager.copy_file('AlipayT/app.json', os.path.join(projectPath,'app.json'))
+        else:
+            manager.copy_file('AlipayT/Napp.json', os.path.join(projectPath,'app.json'))
     try:
         for root, dirs, files in os.walk(RootPath):
             for dir in dirs:
                 full_path = os.path.join(root, dir)
-                XML = os.path.join(full_path, "index.axml")
+                XML = os.path.join(full_path, "index" + suffix)
                 SJS = os.path.join(full_path, "index.sjs")
                 JS = os.path.join(full_path, "index.js")
                 #将代码复制到测试项目代码中
-                manager.copy_file(XML, os.path.join(projectPath,'index.axml'))
-                manager.copy_file(SJS, os.path.join(projectPath,'index.sjs'))
-                manager.copy_file(JS, os.path.join(projectPath,'index.js'))
+                print(f"{os.path.join(codePath,"index" + suffix)}")
+                manager.copy_file(XML, os.path.join(codePath,"index" + suffix))
+                manager.copy_file(SJS, os.path.join(codePath,'index.sjs'))
+                manager.copy_file(JS, os.path.join(codePath,'index.js'))
                 time.sleep(2)
                 RunGetRes(full_path) 
             break
@@ -292,11 +366,12 @@ def Analyzer(RootPath):
     return
 # 使用示例
 if __name__ == "__main__":
+    ConfigureFromArgs()
     print("BEGIN")
     #代码生成模块
     Generator(ResultPath)
     #代码执行模块
-    #Executor(ResultPath)
+    Executor(ResultPath)
     #分析模块
     Analyzer(ResultPath)
     # 或者执行整个工作流程

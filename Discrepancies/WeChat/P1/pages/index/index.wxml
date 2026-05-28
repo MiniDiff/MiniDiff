@@ -1,4 +1,4 @@
-<navigation-bar title="P1 - Inconsistent Page Loading" back="{{false}}" />
+<navigation-bar title="P1 - Inconsistent Life-cycle Management" back="{{false}}" />
 <view class="Box">
   <text>{{md.fun()}}</text>
 </view>

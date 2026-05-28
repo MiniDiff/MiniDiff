@@ -2,7 +2,11 @@ const app = getApp()
 
 Page({
   data: {
-    List:[]
+    List:[
+      {
+        title:'first',
+        childList:[{title:'second'}]
+      }]
   },
   onLoad: function () {
   },

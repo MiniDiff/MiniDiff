@@ -1,8 +1,10 @@
 Page({
   data: {
-    JSData:'Hellow',
+    ColorData:['background:red'],
   },
-  TipCount:function(data){
-    this.setData({JSData :"Change",})
+  onLoad() {
+    this.setData({
+      [`ColorData[${this.data.selected.length}]`]: 'background:yellow',
+    })
   },
 })

@@ -1,16 +1,7 @@
-<view tt:for="{{md.List}}">
+<view tt:for="{{List}}">
   <view>{{item.title}}</view>
   <view tt:for="{{item.childList}}">
     <view>{{item.title}}</view>
   </view>
   {{item.title}}
 </view>
-<sjs module="md">
-  module.exports = {
-    List:[
-        {
-          title:'first',
-          childList:[{title:'second'}]
-        }]
-  }
-</sjs>

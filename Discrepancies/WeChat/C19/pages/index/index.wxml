@@ -1,17 +1,18 @@
-<navigation-bar title="C19 - Inconsistent Scope Priority" back="{{false}}" />
+<navigation-bar title="C19 - Inconsistent Virtual DOM Diffing" back="{{false}}" />
 <view class="Box">
-    <view wx:for="{{md.fun(var_list)}}" wx:for-item="md">
-        <text>{{md.key}}</text>
-    </view>
+  <text >{{md.fun1(var_num)}}</text>
+  :
+  <text >{{md.fun2()}}</text>
+  <input model:value="{{var_num}}"></input>
 </view>
 <wxs module="md">
-    module.exports = {
-        key: "wxs_var_value",
-        fun: function(data){
-            array = [{key: "wxs_fun_value"}]
-            array.push({key: "js_list_value"})
-            console.log(array);
-            return array
-        }
+    var count = 0, count2 = 0
+    module.exports.fun1 = function(data){
+        console.log("[wxs md fun1] count:" + ++count);
+        return count
+    }
+    module.exports.fun2 = function(){
+        console.log("[wxs md fun2] count2:" + ++count2);
+        return count2
     }
 </wxs>

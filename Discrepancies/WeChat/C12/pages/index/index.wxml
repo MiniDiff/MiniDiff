@@ -1,18 +1,9 @@
-<navigation-bar title="C12 - Inconsistent Virtual DOM Diffing" back="{{false}}" />
+<navigation-bar title="C12 - Confused Messaging Channel" back="{{false}}" />
 <view class="Box">
-  <text >{{md.fun1(var_num)}}</text>
-  :
-  <text >{{md.fun2()}}</text>
-  <input model:value="{{var_num}}"></input>
+    <view wx:for="{{var_list}}" wx:for-item="md">
+        <text>{{md.key}}</text>
+    </view>
 </view>
 <wxs module="md">
-    var count = 0, count2 = 0
-    module.exports.fun1 = function(data){
-        console.log("[wxs md fun1] count:" + ++count);
-        return count
-    }
-    module.exports.fun2 = function(){
-        console.log("[wxs md fun2] count2:" + ++count2);
-        return count2
-    }
+    module.exports = {key: "wxs_list_value"}
 </wxs>

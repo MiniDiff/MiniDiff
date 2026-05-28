@@ -3,13 +3,11 @@ page {
   flex-direction: column;
   height: 100vh;
 }
-
 .Box{
     text-align: center;
     padding: 100px;
 }
-
-.intro {
-  padding: 30px;
-  text-align: center;
+.change {
+  color: white;
+  background: #353535;
 }

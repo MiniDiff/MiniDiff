@@ -1,16 +1,4 @@
-<navigation-bar title="C9 - Inconsistent Virtual DOM Diffing" back="{{false}}" />
+<navigation-bar title="C9 - Inconsistent (De)Serialization" back="{{false}}" />
 <view class="Box">
-  <text >{{md.fun1(var_num) + md.fun2(var_num)}}</text>
-  <button bind:tap="tap_handler">add</button>
+    <text>{{js_fun()}}</text>
 </view>
-<wxs module="md">
-    var count = 0, count2 = 0
-    module.exports.fun1 = function(data){
-        console.log("[wxs md fun1] count:" + ++count);
-        return count
-    }
-    module.exports.fun2 = function(data){
-        console.log("[wxs md fun2] count2:" + ++count2);
-        return count2
-    }
-</wxs>

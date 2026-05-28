@@ -1,31 +1,160 @@
-This repo is for "Detecting Logic Discrepancies in Cross-Layer Communications within the WeChat Mini-Program Framework"
+MINIDIFF
+===
+This repo is for "Detecting Logic Discrepancies in Cross-Layer Communications within the Mini-Program Framework"
 
-The folder **Discrepancies** contains the examples of Discrepancies codes:  
-    -**WeChat**:WeChat Mini-Program Discrepancies    
-        --**C1-C20,P1-P8**  : All sample codes  
-        --**readme.md** : Introduction and Code snippet links  
-    -**Alipay**:Alipay Mini-Program Discrepancies  
-        --**C21-C27,P9-P11**  : sample code  
-        --**readme.md** : Introduction  
-    -**TikTok**:TikTok Mini-Program Discrepancies  
-        --**P12-P18**  : All sample codes  
-        --**readme.md** : Introduction 
+Discrepancies Example
+----
+The folder **Discrepancies** contains the examples of Discrepancies codes  
+The directory structure of the **Discrepancies Example** is as follows:
+```
+Discrepancies/  
+├── WeChat/                # WeChat Mini-Program Discrepancies    
+├── ── C1-C20,P1-P8/       # All sample codes  
+├── ── readme.md           # Introduction and Code snippet links  
+├── Alipay/                # Alipay Mini-Program Discrepancies  
+├── ── C21-C27,P9-P11/     # sample code  
+├── ── readme.md           # Introduction  
+├── TikTok/                # TikTok Mini-Program Discrepancies  
+├── ── P12-P18/            # All sample codes  
+└── ── readme.md           # Introduction 
+```
 
-The folder **templates** contains the document of templates and domain knowledge:  
-    -**templates.pdf**:WeChat, TikTok and AlipayMini-Program  
-    --**readme.md** : Introduction  
+autotest
+----
+The folder **autotest** contains the  MiniDiff code  
+The directory structure of the **MiniDiff** project is as follows:
+```
+autotest/
+├── code/                  # main code  
+├── ── readme.md           # Introduction  
+├── ── auto.spec.js        # main code, generate code and run Wechat test case.  
+├── ── auto.spec-gen.js    # generator code, part of main code.  
+├── ── AlipayT/            # template for Alipay.  
+├── ── TikTokT/            # template for TikTok.  
+├── ── WeChatT/            # template for WeChat.  
+├── ── index.\*\*ml**      # xml code of template  
+├── ── ── index.js**       # rjs code of template  
+├── ── ── index.\*\*s**    # rjs code of template  
+├── ── ── app.json**       # project config code of template  
+└── ATcode/                # Executor for Alipay and TikTok
+```
 
-The folder **autotest** contains the  MiniDiff code：  
-    -**code** : main code  
-    --**readme.md** : Introduction  
-    --**auto.spec.js** : main code, generate code and run Wechat test case.  
-    --**auto.spec-gen.js** : generator code, part of main code.  
-    --**AlipayT** : template for Alipay.  
-    --**TikTokT** : template for TikTok.  
-    --**WeChatT** : template for WeChat.  
-    ---**index.\*\*ml** : xml code of template  
-    ---**index.js** : rjs code of template  
-    ---**index.\*\*s** : rjs code of template  
-    ---**app.json** : project config code of template  
-    -**ATcode**: Executor for Alipay and TikTok
-    
+### Autotest for WeChat
+Code in **autotest/code/** is for WeChat
+
+### Environment Setup
+1. system: Windows11
+2. DevTools: Windows 64
+
+### Dependencies:   
+1. install node;
+2. install miniprogram-automator, execute the following command directly:
+```
+npm i miniprogram-automator --save-dev
+```
+
+### Usage
+1. install DevTools Windows 64
+2. create a mini program project
+3. create a page named AutoTest
+4. Overwrite the app.json in the project with the app.json in the code
+5. modify cliPath and projectPath to your path
+6. chose aototest debug port(when test real machine):  
+```
+For Old Version:
+<cli_path> --auto <project_path> --auto-port 9420
+
+For Latest Version:
+<cli_path> auto --project <project_path> --auto-port 9420
+```
+7. run chode:
+```
+for help:
+node .\auto.spec.js --help
+
+run:
+node .\auto.spec.js --devtools-cli-path "dev_path" --test-project-path "test_project_path"
+
+parameter:
+--result-path default ../AutoTestResult/
+--platform default DevTools
+--conf default EW
+--devtools-cli-path Required
+--test-project-path Required
+
+for example: 
+node .\auto.spec.js --devtools-cli-path "F:/tool/Tencent/微信web开发者工具/cli.bat" --test-project-path "F:/WeChatProjects/alltest"
+```
+### Change configuration or platform
+Change the configuration by modifying app.json
+1. Webview + exparser: use app.json
+
+2. Webview + glass-easel, Add the following code to app.json:
+```
+"componentFramework": "glass-easel",
+  "lazyCodeLoading": "requiredComponents"
+```
+
+4. Skyline + glass-easel, Add the following code to app.json:
+```
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox":true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "lazyCodeLoading": "requiredComponents"
+```
+Change platform by modifying link mode
+1. await miniProgram.remote() => await miniProgram.remote(true)
+2. When linking the real machine, you need to configure development tools to automatically link the real machine for debugging
+
+
+### autotest for Alipay and TikTok
+Code in **autotest/ATcode/** is for Alipay and TikTok
+
+### Environment Setup
+1. system: Windows11
+2. DevTools: Windows 64
+
+### Dependencies:   
+1. install python3;
+2. install python module:
+```
+pip install pyautogui
+pip install os
+pip install shutil
+pip install pyautogui
+pip install time
+pip install tkinter
+pip install difflib
+```
+
+### Usage
+1. install DevTools Windows 64
+2. Before running, please launch the corresponding DevTool and run a blank mini program
+3. Command:
+```
+run:
+python .\autotest.py --project-path "test_project_paht" 
+
+parameter:
+--platform default DevTools
+--conf default normal
+--supperapp default 0 # 0 for Alipay , 1 for TikTok
+--project-path
+--result-path default ../AutoTestResult/
+
+for example: 
+python .\autotest.py --platform DevTools --conf normal --project-path "F:/AliMiniProjects/autotest/" --result-path "../AlipayAutoTestResult"
+```
+
+### Change configuration or platform
+Modify variable platform to specify the running platform
+Modify variable conf to specify the running configuration
+You may need to fine tune the click position

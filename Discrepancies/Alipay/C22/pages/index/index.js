@@ -1,3 +1,8 @@
 Page({
-  data: {fun:function() {return 1},}
+  Toshow() {
+    my.navigateTo({ url: '../show/show' });
+  },
+  onLoad(query) {
+    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+  }
 });

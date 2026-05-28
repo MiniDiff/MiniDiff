@@ -1,10 +1,11 @@
 Page({
-  data: {
-    ColorData:['background:red'],
-  },
-  onLoad() {
-    this.setData({
-      "ColorData[0]" : 'background:yellow',
-    })
-  },
+    data: {
+        var_num: 0,
+    },
+    tap_handler: function(){
+        this.setData({
+            var_num: 0
+        })
+    }
 })
+  

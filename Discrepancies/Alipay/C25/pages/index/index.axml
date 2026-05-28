@@ -1,4 +1,5 @@
 
 <view>
-  <button onTap="Toshow" >go to bug show page</button>
+  fun:{{fun}}
+  <button onTap="onTap" >change fun</button>
 </view>

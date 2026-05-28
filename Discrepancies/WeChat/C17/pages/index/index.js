@@ -1,6 +1,12 @@
 Page({
     data: {
-        var_list: [{key: "js_list_value"}]
+        var_num: 0,
+        var_num2: 0,
+    },
+    tap_handler: function(){
+        this.setData({
+            var_num: 0
+        })
     }
 })
   

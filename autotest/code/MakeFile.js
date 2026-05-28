@@ -10,7 +10,7 @@ var Template4 = ['{{F}','{{f}}','{{}}']
 
 var DataString = ['']
 var MakeWXSFile = function(TData,TypeNum,Path){
-  var suffix = '.sjs'
+  var suffix = '.wxs'
 	//  chuli wxs
     try {
       FileString = ''
@@ -97,7 +97,7 @@ var MakeJSFile = function(TData,TypeNum,Path){
 
 var MakeWXMLFile = function(modul1,modul2,modul3,modul4,TData,Api,oper,Path){
 	var TypeNum = [0,0,0,0]
-  var suffix = '.axml'
+  var suffix = '.wxml'
     try {
       const data = fs.readFileSync('index' + suffix, 'utf8');
       let pattern = /\{\{1\}\}/g;

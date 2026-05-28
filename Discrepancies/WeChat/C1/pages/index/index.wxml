@@ -1,4 +1,11 @@
-<navigation-bar title="C1 - Inconsistent (De)Serialization" back="{{false}}" />
+<navigation-bar title="C1 - Inconsistent Shadow-data Maintenance" back="{{false}}" />
 <view class="Box">
-  <text>{{ColorData}}</text>
+  <button bind:tap="tap_handler">{{md.fun(var_num)}}</button>
 </view>
+<wxs module="md">
+    var count = 0
+    module.exports.fun = function(data){
+        console.log("[wxs md fun] count:" + ++count);
+        return count
+    }
+</wxs>

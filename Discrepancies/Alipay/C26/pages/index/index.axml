@@ -1,4 +1,5 @@
 
 <view>
-  <button onTap="Toshow" >go to bug show page</button>
+  fun:{{md.fun}}
 </view>
+<import-sjs from="./index.sjs" name="md" />

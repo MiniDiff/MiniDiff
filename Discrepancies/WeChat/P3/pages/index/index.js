@@ -1,8 +1,6 @@
 Page({
     data: {
-    },
-    onLoad(){
-        this.setData({})
+        var_list: [0,1],
     }
 })
   

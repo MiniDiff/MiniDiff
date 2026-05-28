@@ -1,8 +1,7 @@
 Page({
-  Toshow() {
-    my.navigateTo({ url: '../show/show' });
-  },
-  onLoad(query) {
-    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+  data: {fun:0,},
+  onTap(){
+    this.setData({fun:function() {return 1},})
   }
+
 });

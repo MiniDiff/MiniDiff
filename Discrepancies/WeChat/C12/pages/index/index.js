@@ -1,11 +1,10 @@
 Page({
     data: {
-        var_num: 0,
-        var_num2: 0,
+        var_list: 0
     },
-    tap_handler: function(){
+    onLoad(){
         this.setData({
-            var_num: 0
+            var_list:[{key: "js_list_value"},{key: "js_list_value2"}]
         })
     }
 })

@@ -2,12 +2,12 @@ const app = getApp()
 
 Page({
   data: {
-    List:[
-      {
-        title:'first',
-        childList:[{title:'second'}]
-      }]
+
   },
   onLoad: function () {
+  },
+  Toshow() {
+    // 进行页面跳转
+    tt.navigateTo({ url: "../show/show" });
   },
 })

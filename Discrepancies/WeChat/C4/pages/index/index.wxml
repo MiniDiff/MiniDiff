@@ -1,11 +1,4 @@
-<navigation-bar title="C4 - Inconsistent Data Backup Mechanism" back="{{false}}" />
+<navigation-bar title="C4 - Inconsistent Shadow-data Maintenance" back="{{false}}" />
 <view class="Box">
-  <button bind:tap="tap_handler">{{md.fun(var_num)}}</button>
-</view>
-<wxs module="md">
-    var count = 0
-    module.exports.fun = function(data){
-        console.log("[wxs md fun] count:" + ++count);
-        return count
-    }
-</wxs>
+    <navigator style='display:block;line-height:40px;color:blue;' url='../other/other'>go to wrong page</navigator>
+</view> 

@@ -1,9 +1,16 @@
-<navigation-bar title="C16 - Inconsistent Scope Priority" back="{{false}}" />
+<navigation-bar title="C16 - Inconsistent Virtual DOM Diffing" back="{{false}}" />
 <view class="Box">
-    <view wx:for="{{var_list}}" wx:for-item="md">
-        <text>{{md.key}}</text>
-    </view>
+  <text >{{md.fun1(var_num) + md.fun2(var_num)}}</text>
+  <button bind:tap="tap_handler">add</button>
 </view>
 <wxs module="md">
-    module.exports = {key: "wxs_list_value"}
+    var count = 0, count2 = 0
+    module.exports.fun1 = function(data){
+        console.log("[wxs md fun1] count:" + ++count);
+        return count
+    }
+    module.exports.fun2 = function(data){
+        console.log("[wxs md fun2] count2:" + ++count2);
+        return count2
+    }
 </wxs>

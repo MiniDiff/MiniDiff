@@ -1,11 +1,7 @@
-<navigation-bar title="P4 - Inconsistent Data Update" back="{{false}}" />
+<navigation-bar title="P4 - Inconsistent (De)Serialization" back="{{false}}" />
 <view class="Box">
-  <text>{{md.fun(var_num)}}</text>
+  <text>{{md.var_list.toString()}}</text>
 </view>
 <wxs module="md">
-    var count = 0
-    module.exports.fun = function(data){
-        console.log("[wxs md fun] count:" + ++count);
-        return count
-    }
+    module.exports.var_list = [0,1]
 </wxs>
