@@ -28,15 +28,18 @@ autotest/
 ├── code/                  # main code  
 ├── ── readme.md           # Introduction  
 ├── ── auto.spec.js        # main code, generate code and run Wechat test case.  
-├── ── auto.spec-gen.js    # generator code, part of main code.  
+├── ── index.\*\*ml**      # xml code of template  
+├── ── index.js**          # rjs code of template  
+├── ── index.\*\*s**       # rjs code of template  
+├── ── *app.json**         # project config code of template  
+├── ── wechat_devtools_1.06.2410222_win32_x64.part**       # devtools installation package  
+├── ── ...
+├── ATcode/                # Executor for Alipay and TikTok  
 ├── ── AlipayT/            # template for Alipay.  
 ├── ── TikTokT/            # template for TikTok.  
-├── ── WeChatT/            # template for WeChat.  
-├── ── index.\*\*ml**      # xml code of template  
-├── ── ── index.js**       # rjs code of template  
-├── ── ── index.\*\*s**    # rjs code of template  
-├── ── ── app.json**       # project config code of template  
-└── ATcode/                # Executor for Alipay and TikTok
+├── ── autotest.js         # main code, generate code and run test case.  
+├── ── ...
+└── ── readme.md           # Introduction  
 ```
 
 ### Autotest for WeChat
