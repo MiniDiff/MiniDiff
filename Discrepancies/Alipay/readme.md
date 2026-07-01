@@ -2,9 +2,9 @@ This project is the code of discrepancies in cross-layer communications of Alipa
  
 usage:  
 Running on Android or iOS Phones.  
-discrepancies will be displayed in the interface, AXML or log
-C23,C27,P10 and P11 need to click the button to change the data
-C25,C26:
+discrepancies will be displayed in the interface, AXML or log  
+C25,C27,P10 and P11 need to click the button to change the data  
+C21,C22:  
 Tap the button goto the show_page.  
 Tap the button on show_page to add the count.  
 Then tap the upper right corner to return to the initial page.  
