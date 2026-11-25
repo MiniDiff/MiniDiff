@@ -3,24 +3,25 @@ import os
 import time
 from pathlib import Path
 
-import DataTypes as DataType
-import MakeFile
+import data_types as DataType
+import make_file
 
 
-DataName = ["JSData", "JSLData", "WXSData", "WXSLData", "GENdata", "MT"]
-TotalDataNum = 14
+DATA_NAME = ["JSData", "JSLData", "WXSData", "WXSLData", "GENdata", "MT"]
+TOTAL_DATA_NUM = 14
 
-DataTypes = DataType.DataTypes
-operators = DataType.operators
-RootPath = "../AlipayAutoTestResult/"
-LogString = ""
-SLogString = ""
+DATA_TYPES = DataType.DATA_TYPES
+OPERATORS = DataType.OPERATORS
+ROOT_PATH = "../AlipayAutoTestResult/"
+LOG_STRING = ""
+SLOG_STRING = ""
 
-flag = True
-logflag = 2 * 1
+FLAG = True
+LOG_FLAG = 2 * 1
 
-oldTime = int(time.time() * 1000)
-timeFlag = False
+OLD_TIME = int(time.time() * 1000)
+TIME_FLAG = False
+OUT_TIME = 60000
 
 
 async def exec():
@@ -28,47 +29,46 @@ async def exec():
         for modul2 in range(3):
             for modul3 in range(3):
                 for modul4 in range(3):
-                    for DTNum in range(len(DataTypes) - 1, -1, -1):
-                        for ApiNum in range(0, -1, -1):
-                            for operNum in range(len(operators) - 1, -1, -1):
+                    for dt_num in range(len(DATA_TYPES) - 1, -1, -1):
+                        for api_num in range(0, -1, -1):
+                            for oper_num in range(len(OPERATORS) - 1, -1, -1):
                                 num = (
                                     "A"
                                     + str(modul1)
                                     + str(modul2)
                                     + str(modul3)
                                     + str(modul4)
-                                    + DataTypes[DTNum][0]
-                                    + str(ApiNum)
-                                    + str(operNum)
+                                    + DATA_TYPES[dt_num][0]
+                                    + str(api_num)
+                                    + str(oper_num)
                                 )
-                                output_path = Path(RootPath) / num
+                                output_path = Path(ROOT_PATH) / num
                                 os.makedirs(output_path, exist_ok=True)
 
-                                type_num = MakeFile.MakeWXMLFile(
+                                type_num = make_file.make_wxml_file(
                                     modul1,
                                     modul2,
                                     modul3,
                                     modul4,
-                                    DataTypes[DTNum],
-                                    DataTypes[DTNum][2][ApiNum],
-                                    operators[operNum],
+                                    DATA_TYPES[dt_num],
+                                    DATA_TYPES[dt_num][2][api_num],
+                                    OPERATORS[oper_num],
                                     output_path,
                                 )
-                                MakeFile.MakeJSFile(DataTypes[DTNum], type_num, output_path)
-                                MakeFile.MakeWXSFile(DataTypes[DTNum], type_num, output_path)
+                                make_file.make_js_file(DATA_TYPES[dt_num], type_num, output_path)
+                                make_file.make_wxs_file(DATA_TYPES[dt_num], type_num, output_path)
 
                                 if modul3 == 0:
                                     break
 
 
-async def timeoutPromise(func, timeout):
+async def timeout_promise(func, timeout):
     return await asyncio.wait_for(func(), timeout=timeout / 1000)
 
 
-def OutTime():
-    global oldTime
-    newTime = int(time.time() * 1000)
-    if (newTime - oldTime > outTime) and timeFlag:
+def check_timeout():
+    new_time = int(time.time() * 1000)
+    if (new_time - OLD_TIME > OUT_TIME) and TIME_FLAG:
         print("时间到")
 
 

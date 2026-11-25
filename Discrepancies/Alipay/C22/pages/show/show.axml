@@ -1,5 +1,0 @@
-<view style="text-align: center;">
-  {{md.ReturnCount(jsdata)}}
-  <button onTap="AddCount" >Add Count</button>
-</view>
-<import-sjs from="./show.sjs" name="md" />

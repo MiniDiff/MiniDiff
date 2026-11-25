@@ -1,5 +1,0 @@
-<navigation-bar title="P3 - Inconsistent (De)Serialization" back="{{false}}" />
-<view class="Box">
-  <text>{{var_list.toString()}}</text>
-</view>
-

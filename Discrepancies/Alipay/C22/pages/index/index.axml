@@ -1,4 +1,0 @@
-
-<view>
-  <button onTap="Toshow" >go to bug show page</button>
-</view>

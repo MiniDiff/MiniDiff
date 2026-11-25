@@ -15,7 +15,7 @@ Discrepancies/
 ├── ── C21-C27,P9-P11/     # sample code  
 ├── ── readme.md           # Introduction  
 ├── TikTok/                # TikTok Mini-Program Discrepancies  
-├── ── P12-P18/            # All sample codes  
+├── ── P12-P18/            # All sample codes   
 └── ── readme.md           # Introduction 
 ```
 
