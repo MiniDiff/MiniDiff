@@ -1,0 +1,7 @@
+<view tt:for="{{List}}">
+  <view>{{item.title}}</view>
+  <view tt:for="{{item.childList}}">
+    <view>{{item.title}}</view>
+  </view>
+  {{item.title}}
+</view>

@@ -1,0 +1,4 @@
+
+<view>
+  fun:{{fun()}}
+</view>

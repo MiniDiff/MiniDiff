@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "defaultTitle": "My App"
+  },
+  "behavior": {
+    "requestReferrerStrategy": "page",
+    "requestReferrerStyle": "full",
+    "requestDefaultEnableCookie": true,
+    "connectSocketDefaultMultiple": true
+  },
+  
+  "renderer": "native",
+  "rendererOptions": {
+  	"native": {
+      "sdkMinVersion": "2.9.6", 
+      "iosMinVersion": "10.5.70", 
+      "androidMinVersion": "10.5.70"
+    }
+  },
+  "useDynamicPlugins": true,
+  "lazyCodeLoading": "requiredComponents"
+}

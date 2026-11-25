@@ -1,0 +1,2 @@
+<button onTap="{{md.onTap}}" >On Tap </button>    
+<import-sjs from="./show.sjs" name="md" />

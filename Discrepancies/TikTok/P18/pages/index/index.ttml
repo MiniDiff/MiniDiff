@@ -1,0 +1,10 @@
+<button bindtap="JSTap">{{md.ReturnCount(jsData)}}</button>
+<sjs module="md">
+  var count = 0 
+  module.exports = { 
+    ReturnCount: function(data){
+      count ++
+      return count 
+    }
+  }
+</sjs>
