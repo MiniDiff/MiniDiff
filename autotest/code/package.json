@@ -1,0 +1,12 @@
+{
+  "name": "minidiff-wechat-autotest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WeChat testcase generator and executor for MiniDiff",
+  "scripts": {
+    "help": "node auto.spec.js --help"
+  },
+  "devDependencies": {
+    "miniprogram-automator": "^0.13.0"
+  }
+}

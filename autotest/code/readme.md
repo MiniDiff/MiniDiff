@@ -1,21 +1,26 @@
 ### Environment Setup
-1. system: Windows11
-2. DevTools: Windows 64
+1. system: Windows 11
+2. WeChat Devtools: Windows 64
 
-### Dependencies:   
-1. install node;
-2. install miniprogram-automator, execute the following command directly:
+### Dependencies
+1. Install Node.js.
+2. From this directory, install the Node dependency:
+
 ```
-npm i miniprogram-automator --save-dev
+npm install
 ```
+
+This installs `miniprogram-automator` as declared in `package.json`. Commit
+`package-lock.json` to pin the exact version used in the paper.
 
 ### Usage
-1. install DevTools Windows 64
-2. create a mini program project
-3. create a page named AutoTest
-4. Overwrite the app.json in the project with the app.json in the code
-5. modify cliPath and projectPath to your path
-6. chose aototest debug port(when test real machine):  
+1. install WeChat Devtools Windows 64
+2. Create a mini-program project
+3. Create a page named `AutoTest`
+4. Overwrite the project's `app.json` with the `app.json` provided in this folder
+5. Set `cliPath` and `projectPath` to your local paths
+6. Choose the autotest debug port when testing on a real device:
+
 ```
 For Old Version:
 <cli_path> --auto <project_path> --auto-port 9420
@@ -23,7 +28,9 @@ For Old Version:
 For Latest Version:
 <cli_path> auto --project <project_path> --auto-port 9420
 ```
-7. run chode:
+
+7. Run the code:
+
 ```
 for help:
 node .\auto.spec.js --help
@@ -31,41 +38,45 @@ node .\auto.spec.js --help
 run:
 node .\auto.spec.js --devtools-cli-path "dev_path" --test-project-path "test_project_path"
 
-parameter:
+parameters:
 --result-path default ../AutoTestResult/
 --platform default DevTools
 --conf default EW
---devtools-cli-path Required
---test-project-path Required
+--devtools-cli-path
+--test-project-path
 
-for example: 
+for example:
 node .\auto.spec.js --devtools-cli-path "F:/tool/Tencent/微信web开发者工具/cli.bat" --test-project-path "F:/WeChatProjects/alltest"
 ```
-### Change configuration or platform
-Change the configuration by modifying app.json
-1. Webview + exparser: use app.json
 
-2. Webview + glass-easel, Add the following code to app.json:
+### Change configuration or platform
+
+Change configuration by modifying `app.json`:
+
+1. WebView and Exparser: use the provided `app.json`.
+
+2. WebView and GlassEasel: add
 ```
 "componentFramework": "glass-easel",
-  "lazyCodeLoading": "requiredComponents"
+"lazyCodeLoading": "requiredComponents"
 ```
 
-4. Skyline + glass-easel, Add the following code to app.json:
+3. Skyline and GlassEasel: add
 ```
-  "renderer": "skyline",
-  "rendererOptions": {
-    "skyline": {
-      "defaultDisplayBlock": true,
-      "defaultContentBox":true,
-      "disableABTest": true,
-      "sdkVersionBegin": "3.0.0",
-      "sdkVersionEnd": "15.255.255"
-    }
-  },
-  "componentFramework": "glass-easel",
-  "lazyCodeLoading": "requiredComponents"
+"renderer": "skyline",
+"rendererOptions": {
+  "skyline": {
+    "defaultDisplayBlock": true,
+    "defaultContentBox": true,
+    "disableABTest": true,
+    "sdkVersionBegin": "3.0.0",
+    "sdkVersionEnd": "15.255.255"
+  }
+},
+"componentFramework": "glass-easel",
+"lazyCodeLoading": "requiredComponents"
 ```
-Change platform by modifying link mode
-1. await miniProgram.remote() => await miniProgram.remote(true)
-2. When linking the real machine, you need to configure development tools to automatically link the real machine for debugging
+
+Change running platform by modifying `await miniProgram.remote()` to
+`await miniProgram.remote(true)`. Also enable automatic real-device debugging in
+WeChat DevTools.

@@ -19,12 +19,5 @@
     "differential testing",
     "software testing",
     "cross-layer communication"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "https://doi.org/REPLACE-WITH-ICSE27-DOI",
-      "relation": "isSupplementTo",
-      "resource_type": "publication-conferencepaper"
-    }
   ]
 }

@@ -1,0 +1,5 @@
+# Third-party dependencies for the Alipay / TikTok executor.
+# Install with:  pip install -r requirements.txt
+# os, shutil, time, tkinter and difflib are Python standard-library modules
+# and must NOT be installed with pip.
+pyautogui

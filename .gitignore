@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log*
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# MiniDiff generated results and interrupted downloads
+AutoTestResult/
+AlipayAutoTestResult/
+*.part
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
