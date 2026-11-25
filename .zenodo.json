@@ -1,0 +1,30 @@
+{
+  "title": "MiniDiff: Detecting Logic Discrepancies in Cross-Layer Communications within Mini-Program Frameworks",
+  "description": "Source code and experimental data for MINIDIFF, an automated approach for detecting logic discrepancies in cross-layer communications within mini-program frameworks. Correspondence regarding the artifact: youwei@ruc.edu.cn.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "version": "1.0.0",
+  "language": "eng",
+  "creators": [
+    {"name": "Yuan, Jiangfeng", "affiliation": "Renmin University of China", "type": "ProjectMember"},
+    {"name": "Lin, Run", "affiliation": "Renmin University of China", "type": "ProjectMember"},
+    {"name": "Huang, Jianjun", "affiliation": "Renmin University of China", "type": "ProjectMember"},
+    {"name": "Liang, Bin", "affiliation": "Renmin University of China", "type": "ProjectMember"},
+    {"name": "Xing, Luyi", "affiliation": "University of Illinois Urbana-Champaign", "type": "ProjectMember"},
+    {"name": "You, Wei", "affiliation": "Renmin University of China", "type": "ProjectMember"}
+  ],
+  "keywords": [
+    "mini-programs",
+    "differential testing",
+    "software testing",
+    "cross-layer communication"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/REPLACE-WITH-ICSE27-DOI",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-conferencepaper"
+    }
+  ]
+}

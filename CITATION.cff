@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MiniDiff: Detecting Logic Discrepancies in Cross-Layer Communications within Mini-Program Frameworks"
+abstract: >-
+  Source code and experimental data for MINIDIFF, an automated approach that
+  synthesizes mini-programs from cross-layer communication building blocks and
+  detects logic discrepancies across platforms and configurations of the WeChat,
+  Alipay, and TikTok mini-program frameworks.
+authors:
+  - given-names: Jiangfeng
+    family-names: Yuan
+    affiliation: Renmin University of China
+  - given-names: Run
+    family-names: Lin
+    affiliation: Renmin University of China
+  - given-names: Jianjun
+    family-names: Huang
+    affiliation: Renmin University of China
+  - given-names: Bin
+    family-names: Liang
+    affiliation: Renmin University of China
+  - given-names: Luyi
+    family-names: Xing
+    affiliation: University of Illinois Urbana-Champaign
+  - given-names: Wei
+    family-names: You
+    affiliation: Renmin University of China
+version: 1.0.0
+license: MIT
+keywords:
+  - mini-programs
+  - differential testing
+  - software testing
+  - cross-layer communication
